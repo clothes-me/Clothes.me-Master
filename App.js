@@ -1,15 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import HomeScreen from "./Screens/HomeScreen.js"
+import SelectionScreen from "./Screens/SelectionScreen.js"
+import ResultsScreen from "./Screens/ResultsScreen.js"
+
+const MainNavigator = createMaterialBottomTabNavigator({
+  Home: { screen: HomeScreen },
+  Selection: { screen: SelectionScreen },
+  Results: { screen: ResultsScreen }
+}, {
+  activeTintColor: 'black'
+})
+
+const App = createAppContainer(MainNavigator); 
+export default App;
 
 const styles = StyleSheet.create({
   container: {
