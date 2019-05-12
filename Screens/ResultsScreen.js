@@ -31,7 +31,7 @@ export default class ResultsScreen extends React.Component {
                 onPress={this.buttonTrigger}
                 underlayColor = "white">
 
-              <Text style={styles.buttonText}> Start Now </Text>
+              <Text style={styles.buttonText}> Style Again? </Text>
 
           </TouchableHighlight>
       </View>

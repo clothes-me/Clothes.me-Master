@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
-import { Font } from 'expo';
+import { Font, AppLoading, Asset} from 'expo';
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -11,73 +11,105 @@ export default class HomeScreen extends React.Component {
     this.state = {
       fontLoaded: false,
     };
-}
+  }
+
   async componentDidMount() {
+    await Asset.loadAsync([
+      require('../assets/Shirt.png')
+    ]),
+
     await Font.loadAsync({
       'AbrilFatface-Regular': require('../assets/fonts/AbrilFatface-Regular.ttf'),
+      'Pala': require('../assets/fonts/pala.ttf') 
     });
 
+    
     this.setState({ fontLoaded: true });
   }
 
   buttonTrigger() {
     this.props.navigation.navigate('Selection')
   }
-  
+
+
   render() {
-    return (
-      <View style={styles.container}>
-       {
-          this.state.fontLoaded ? (
-          <Text style = {styles.headingText}>Clothes Encounters</Text>
-          ): null }
-          <Text style = {styles.loweredText}>Make Clothes Easy</Text>
+
+    if (this.state.fontLoaded) {
+
+      return (
+        <View style={styles.container}>
           
-          
-          <Image
-          style={{width: 350, height: 350,flex:1}}
-          source={require('../assets/Shirt.png')}/>
-          
+                <View style={styles.heading}>
+                    <View>
+                      <Text style = {styles.headingText1}>Clothes</Text>
+                      <Text style = {styles.headingText2}>Encounters</Text>
+                    </View>
 
-          <TouchableHighlight 
-                style={styles.button}
-                onPress={this.buttonTrigger}
-                underlayColor = "white">
+                <Text style = {styles.loweredText}>Real Clothes in a Virtual World</Text>
+                </View>
+              
+            <View style={styles.ImageContainer}>
+              <Image
+              style={styles.Image}
+              source={require('../assets/Shirt.png')}/>
+            </View>
+            
+            <TouchableHighlight 
+                  style={styles.button}
+                  onPress={this.buttonTrigger}
+                  underlayColor = "white">
 
-              <Text style = {{color: 'white'}}> Start Now </Text>
+                <Text style = {{color: 'white'}}> Start Now </Text>
 
-          </TouchableHighlight>
+            </TouchableHighlight>
+            
 
-
-      </View>
-    );
-  }
+        </View>
+      );
+   } else {
+    return <AppLoading />;
+   }
+ }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
     justifyContent: 'center',
   },
   heading: {
-    flex: 2,
+    flex: 12,
     alignItems: 'center',
   },
-  headingText: {
+  headingText1: {
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 60,
-    margin: 22,
-    marginBottom: 0,
+    fontSize: 50,
+    marginTop: 22,
+    fontFamily: 'AbrilFatface-Regular',
+    textAlign: 'center',
+  },
+  headingText2: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 50,
     fontFamily: 'AbrilFatface-Regular',
     textAlign: 'center',
   },
 
   loweredText: {
     fontFamily: 'Palatino',
-    textAlign: 'left',
+    textAlign: 'center',
+  },
+  ImageContainer:{
+    flex:20,
+    alignItems: 'center',
+  },
+  Image: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain'
   },
   button: {
 		backgroundColor: 'black',
@@ -87,6 +119,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     overflow: 'hidden',
     padding: 10,
-    margin: 10
+    margin: 10,
+    alignItems: 'center',
 	}
 });
