@@ -15,7 +15,13 @@ export default class HomeScreen extends React.Component {
 
   async componentDidMount() {
     await Asset.loadAsync([
-      require('../assets/Shirt.png')
+      require('../assets/Shirt.png'),
+      require('../assets/Stars/1Star.png'),
+      require('../assets/Stars/2Star.png'),
+      require('../assets/Stars/3Star.png'),
+      require('../assets/Stars/4Star.png'),
+      require('../assets/Stars/5Star.png'),
+      require('../assets/Clothing_Icons/white_tennis_shoes.png')
     ]),
 
     await Font.loadAsync({
@@ -23,7 +29,6 @@ export default class HomeScreen extends React.Component {
       'Pala': require('../assets/fonts/pala.ttf') 
     });
 
-    
     this.setState({ fontLoaded: true });
   }
 
@@ -31,11 +36,8 @@ export default class HomeScreen extends React.Component {
     this.props.navigation.navigate('Selection')
   }
 
-
   render() {
-
     if (this.state.fontLoaded) {
-
       return (
         <View style={styles.container}>
           
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
   },
 
   loweredText: {
-    fontFamily: 'Palatino',
+    fontFamily: 'Pala',
     textAlign: 'center',
   },
   ImageContainer:{

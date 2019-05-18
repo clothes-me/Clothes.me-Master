@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Modal, Text, TouchableHighlight, View, Alert, Button, StyleSheet} from 'react-native';
-import { Font, AppLoading } from 'expo';
-import { Directions } from 'react-native-gesture-handler';
 
 export default class SelectionScreen extends React.Component {
   constructor(props) {
@@ -11,23 +9,16 @@ export default class SelectionScreen extends React.Component {
     
     this.state = {
       fontLoaded: false,
+      userRating: 5,
     };
   }
 
-  async componentDidMount() {
-    await Font.loadAsync({
-      'AbrilFatface-Regular': require('../assets/fonts/AbrilFatface-Regular.ttf'),
-    });
-
-    this.setState({ fontLoaded: true });
-  }
-
   buttonTrigger() {
-    this.props.navigation.navigate('Results')
+    this.props.navigation.navigate('Results', {userRating:this.state.userRating})
   }
 
   render() {
-  if (this.state.fontLoaded) {
+  
     return (
       <View style={styles.container}>
       
@@ -38,17 +29,17 @@ export default class SelectionScreen extends React.Component {
                   <View style = {styles.selection}>
                     <View style = {styles.selectionInner}>
                       <Text style={styles.selectionText}>Top</Text>
-                      <View style={{flex:1, backgroundColor: 'orange'}}></View>
+                      <View style={{flex:1}}></View>
                     </View>
 
                     <View style = {styles.selectionInner}>
                       <Text style={styles.selectionText}>Bottom</Text>
-                      <View style={{flex:1, backgroundColor: 'orange'}}></View>
+                      <View style={{flex:1}}></View>
                     </View>
 
                     <View style = {styles.selectionInner}>
                       <Text style={styles.selectionText}>Shoes</Text>
-                      <View style={{flex:1, backgroundColor: 'orange'}}></View>
+                      <View style={{flex:1}}></View>
                     </View>
                   </View>
             
@@ -62,20 +53,17 @@ export default class SelectionScreen extends React.Component {
               </TouchableHighlight>
 
       </View>
-    );
-  }  else {
-    return <AppLoading />;
-  }
+    ); 
  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   heading: {
     flex: 1,
-    backgroundColor: 'yellow',
   },
   headingText: {
     alignItems: 'center',
@@ -87,7 +75,6 @@ const styles = StyleSheet.create({
   },
   selection: {
     flex: 1,
-    backgroundColor: 'red',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
