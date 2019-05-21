@@ -3,6 +3,10 @@ import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native'
 import { Font, AppLoading, Asset} from 'expo';
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    header:null
+  }
+
   constructor(props) {
     super(props);
 
@@ -21,8 +25,60 @@ export default class HomeScreen extends React.Component {
       require('../assets/Stars/3Star.png'),
       require('../assets/Stars/4Star.png'),
       require('../assets/Stars/5Star.png'),
-      require('../assets/Clothing_Icons/white_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/positive_attitude!.png'),
+      require('../assets/Clothing_Icons/radiant_smile!.png'),
+      require('../assets/Clothing_Icons/confidence!.png'),
       require("../assets/Clothing_Icons/black_sweater.png"),
+      require('../assets/Clothing_Icons/black_buttonup.png'),
+      require('../assets/Clothing_Icons/black_shirt.png'),
+      require('../assets/Clothing_Icons/blue_buttonup.png'),
+      require('../assets/Clothing_Icons/blue_shirt.png'),
+      require('../assets/Clothing_Icons/blue_sweater.png'),
+      require('../assets/Clothing_Icons/green_buttonup.png'),
+      require('../assets/Clothing_Icons/green_shirt.png'),
+      require('../assets/Clothing_Icons/green_sweater.png'),
+      require('../assets/Clothing_Icons/orange_buttonup.png'),
+      require('../assets/Clothing_Icons/orange_shirt.png'),
+      require('../assets/Clothing_Icons/orange_sweater.png'),
+      require('../assets/Clothing_Icons/pink_shirt.png'),
+      require('../assets/Clothing_Icons/pink_sweater.png'),
+      require('../assets/Clothing_Icons/purple_buttonup.png'),
+      require('../assets/Clothing_Icons/purple_shirt.png'),
+      require('../assets/Clothing_Icons/purple_sweater.png'),
+      require('../assets/Clothing_Icons/red_buttonup.png'),
+      require('../assets/Clothing_Icons/red_shirt.png'),
+      require('../assets/Clothing_Icons/red_sweater.png'),
+      require('../assets/Clothing_Icons/white_buttonup.png'),
+      require('../assets/Clothing_Icons/white_shirt.png'),
+      require('../assets/Clothing_Icons/white_sweater.png'),
+      require('../assets/Clothing_Icons/yellow_buttonup.png'),
+      require('../assets/Clothing_Icons/yellow_shirt.png'),
+      require('../assets/Clothing_Icons/yellow_sweater.png'),
+      require('../assets/Clothing_Icons/black_jeans.png'),
+      require('../assets/Clothing_Icons/black_joggers.png'),
+      require('../assets/Clothing_Icons/black_skirt.png'),
+      require('../assets/Clothing_Icons/blue_skirt.png'),
+      require('../assets/Clothing_Icons/colored_jeans.png'),
+      require('../assets/Clothing_Icons/darkwash_jeans.png'),
+      require('../assets/Clothing_Icons/gray_joggers.png'),
+      require('../assets/Clothing_Icons/green_skirt.png'),
+      require('../assets/Clothing_Icons/khaki_jeans.png'),
+      require('../assets/Clothing_Icons/lightwash_jeans.png'),
+      require('../assets/Clothing_Icons/mediumwash_jeans.png'),
+      require('../assets/Clothing_Icons/orange_skirt.png'),
+      require('../assets/Clothing_Icons/pink_skirt.png'),
+      require('../assets/Clothing_Icons/purple_skirt.png'),
+      require('../assets/Clothing_Icons/red_skirt.png'),
+      require('../assets/Clothing_Icons/white_skirt.png'),
+      require('../assets/Clothing_Icons/yellow_skirt.png'),
+      require('../assets/Clothing_Icons/black_boots.png'),
+      require('../assets/Clothing_Icons/black_dress_shoes.png'),
+      require('../assets/Clothing_Icons/black_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/brown_dress_shoes.png'),
+      require('../assets/Clothing_Icons/colored_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/slides.png'),
+      require('../assets/Clothing_Icons/white_tennis_shoes.png'),
+
     ]),
 
     await Font.loadAsync({

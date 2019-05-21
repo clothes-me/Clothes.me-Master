@@ -5,26 +5,40 @@ import ModalGallery from "../components/ModalGallery.js"
 import {clothingIcons} from '../assets/ImageData.js';
 
 export default class SelectionScreen extends React.Component {
+  static navigationOptions = {
+    header:null
+  }
+
   constructor(props) {
     super(props);
 
     this.buttonTrigger = this.buttonTrigger.bind(this);
-    
+    this.scoreChanger = this.scoreChanger.bind(this);
+
     this.state = {
       fontLoaded: false,
-      userRating: 14,
+      topscore: 0,
+      botscore:0,
+      shoescore:0,
     };
   }
 
+  scoreChanger(value, newscore) {
+    this.setState({
+      [value]: newscore,
+    });
+  }
+
   buttonTrigger() {
-    this.props.navigation.navigate('Results', {userRating:this.state.userRating})
+    let userRating = this.state.topscore + this.state.botscore + this.state.shoescore
+    this.props.navigation.navigate('Results', {userRating: userRating})
   }
 
   render() {
   
     return (
       <View style={styles.container}>
-      
+        
                   <View style = {styles.heading}>
                     <Text style={styles.headingText}>What's your outfit of the day?</Text>
                   </View>
@@ -33,8 +47,10 @@ export default class SelectionScreen extends React.Component {
                           
                           <View style = {styles.selectionInner}>
                             <Text style={styles.selectionText}>Top</Text>
-                            <ModalGallery imagedata = {clothingIcons.Tops}/>
-                            {console.log(clothingIcons.Tops)}
+                            <ModalGallery imagedata = {clothingIcons.Tops}
+                                          columnNumber = {3}
+                                          score = 'topscore'
+                                          scoreChanger= {this.scoreChanger}/>
                           </View>
                           
 
@@ -42,14 +58,20 @@ export default class SelectionScreen extends React.Component {
 
                           <View style = {styles.selectionInner}>
                             <Text style={styles.selectionText}>Bottom</Text>
-                            <View style={{flex:1, backgroundColor: 'green'}}></View>
+                            <ModalGallery imagedata = {clothingIcons.Bottoms}
+                                          columnNumber = {3}
+                                          score = 'botscore'
+                                          scoreChanger= {this.scoreChanger}/>
                           </View>
 
 
 
                           <View style = {styles.selectionInner}>
                             <Text style={styles.selectionText}>Shoes</Text>
-                            <View style={{flex:1, backgroundColor: 'blue'}}></View>
+                            <ModalGallery imagedata = {clothingIcons.Shoes}
+                                          columnNumber = {2}
+                                          score = 'shoescore'
+                                          scoreChanger= {this.scoreChanger}/>
                           </View>
 
                   </View>

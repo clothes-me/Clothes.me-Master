@@ -4,6 +4,10 @@ import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native'
 import {reccomendationText, randomTips} from '../assets/GeneratedText';
 
 export default class ResultsScreen extends React.Component {
+  static navigationOptions = {
+    header:null
+  }
+
   constructor(props) {
     super(props);
 

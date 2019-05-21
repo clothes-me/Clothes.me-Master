@@ -9,25 +9,24 @@ export default class ModalGallery extends Component {
     super(props)
     this.state = {
        modalVisible: false,
-       columns:3,
+       columns: this.props.columnNumber,
        displayImage: this.props.imagedata[0].imagePath,
        }
   }
 
  render() {
    const {columns} = this.state
-   console.log(this.props.imagedata)
 
    return (
      <View style={styles.container}>
 
         <TouchableOpacity
-          style ={{backgroundColor: "red", alignItems: "center"}}
+          style ={{ alignItems: "center"}}
           onPress={() => {
             this.setState({modalVisible: true});
           }}>
 
-          <Image style={{width: 100, height: 100, resizeMode: 'contain'}} 
+          <Image style={{width: 90, height: 90, resizeMode: 'contain'}} 
                  source = {this.state.displayImage}/>
         </TouchableOpacity>
 
@@ -44,18 +43,19 @@ export default class ModalGallery extends Component {
                 data = {this.props.imagedata}
                 renderItem={({ item }) => {
                   return (
-                    <TouchableOpacity
-                      onPress={() => {
-                        this.setState({
-                          displayImage: item,
-                          modalVisible: false
-                        }); 
-                      }}>
-
-                      <Image style={{width: (ITEM_WIDTH-(20*columns))/columns, height: 100, resizeMode: 'contain', margin: 10}} 
-                          source = {item.imagePath}/>
+                        <TouchableOpacity
+                          onPress={() => {
+                            this.setState({
+                              displayImage: item.imagePath,
+                              modalVisible: false
+                            }); 
+                            this.props.scoreChanger(this.props.score, item.score)
+                          }}>
                           
-                    </TouchableOpacity>
+                          <Image style={{width: (ITEM_WIDTH-(20*columns))/columns, height: 100, resizeMode: 'contain', margin: 10}} 
+                              source = {item.imagePath}/>
+                              
+                        </TouchableOpacity>
                     );
                   }}
                 keyExtractor={(item, index) => item.reccomendation}

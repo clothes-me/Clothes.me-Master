@@ -7,7 +7,7 @@ import HomeScreen from "./Screens/HomeScreen.js"
 import SelectionScreen from "./Screens/SelectionScreen.js"
 import ResultsScreen from "./Screens/ResultsScreen.js"
 
-const MainNavigator = createMaterialBottomTabNavigator({
+const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
   Selection: { screen: SelectionScreen },
   Results: { screen: ResultsScreen }
