@@ -78,6 +78,12 @@ export default class HomeScreen extends React.Component {
       require('../assets/Clothing_Icons/colored_tennis_shoes.png'),
       require('../assets/Clothing_Icons/slides.png'),
       require('../assets/Clothing_Icons/white_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/blue_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/green_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/orange_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/pink_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/purple_tennis_shoes.png'),
+      require('../assets/Clothing_Icons/red_tennis_shoes.png'),
 
     ]),
 

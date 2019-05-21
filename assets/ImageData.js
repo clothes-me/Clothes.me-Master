@@ -254,5 +254,40 @@ export let clothingIcons = {
                                    imagePath: require('../assets/Clothing_Icons/white_tennis_shoes.png'),
                                    score: 0,
                                 },
+                                {
+                                   reccomendation: "blue_tennis_shoes",
+                                   imagePath: require('../assets/Clothing_Icons/blue_tennis_shoes.png'),
+                                   score: 2,
+                                },
+                                {
+                                   reccomendation: "green_tennis_shoes",
+                                   imagePath: require('../assets/Clothing_Icons/green_tennis_shoes.png'),
+                                   score: 3,
+                                },
+                                {
+                                   reccomendation: "orange_tennis_shoes",
+                                   imagePath: require('../assets/Clothing_Icons/orange_tennis_shoes.png'),
+                                   score: 4,
+                                },
+                                {
+                                 reccomendation: "yellow_tennis_shoes",
+                                 imagePath: require('../assets/Clothing_Icons/yellow_tennis_shoes.png'),
+                                 score: 4,
+                              },
+                                {
+                                   reccomendation: "pink_tennis_shoes",
+                                   imagePath: require('../assets/Clothing_Icons/pink_tennis_shoes.png'),
+                                   score: 5,
+                                },
+                                {
+                                   reccomendation: "purple_tennis_shoes",
+                                   imagePath: require('../assets/Clothing_Icons/purple_tennis_shoes.png'),
+                                   score: 5,
+                                },
+                                {
+                                   reccomendation: "red_tennis_shoes",
+                                   imagePath: require('../assets/Clothing_Icons/red_tennis_shoes.png'),
+                                   score: 2,
+                                },
                             ]
     }
