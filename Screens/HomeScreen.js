@@ -21,7 +21,8 @@ export default class HomeScreen extends React.Component {
       require('../assets/Stars/3Star.png'),
       require('../assets/Stars/4Star.png'),
       require('../assets/Stars/5Star.png'),
-      require('../assets/Clothing_Icons/white_tennis_shoes.png')
+      require('../assets/Clothing_Icons/white_tennis_shoes.png'),
+      require("../assets/Clothing_Icons/black_sweater.png"),
     ]),
 
     await Font.loadAsync({

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {Modal, Text, TouchableHighlight, View, Alert, Button, StyleSheet} from 'react-native';
 
+import ModalGallery from "../components/ModalGallery.js"
+import {clothingIcons} from '../assets/ImageData.js';
+
 export default class SelectionScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +12,7 @@ export default class SelectionScreen extends React.Component {
     
     this.state = {
       fontLoaded: false,
-      userRating: 5,
+      userRating: 14,
     };
   }
 
@@ -27,20 +30,28 @@ export default class SelectionScreen extends React.Component {
                   </View>
 
                   <View style = {styles.selection}>
-                    <View style = {styles.selectionInner}>
-                      <Text style={styles.selectionText}>Top</Text>
-                      <View style={{flex:1}}></View>
-                    </View>
+                          
+                          <View style = {styles.selectionInner}>
+                            <Text style={styles.selectionText}>Top</Text>
+                            <ModalGallery imagedata = {clothingIcons.Tops}/>
+                            {console.log(clothingIcons.Tops)}
+                          </View>
+                          
 
-                    <View style = {styles.selectionInner}>
-                      <Text style={styles.selectionText}>Bottom</Text>
-                      <View style={{flex:1}}></View>
-                    </View>
 
-                    <View style = {styles.selectionInner}>
-                      <Text style={styles.selectionText}>Shoes</Text>
-                      <View style={{flex:1}}></View>
-                    </View>
+
+                          <View style = {styles.selectionInner}>
+                            <Text style={styles.selectionText}>Bottom</Text>
+                            <View style={{flex:1, backgroundColor: 'green'}}></View>
+                          </View>
+
+
+
+                          <View style = {styles.selectionInner}>
+                            <Text style={styles.selectionText}>Shoes</Text>
+                            <View style={{flex:1, backgroundColor: 'blue'}}></View>
+                          </View>
+
                   </View>
             
             <TouchableHighlight 
@@ -83,6 +94,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   selectionText: {
+    flex:1,
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: 36,

@@ -56,7 +56,6 @@ export default class ResultsScreen extends React.Component {
       var reccomendedImage = reccomendationText.FiveStar[randrecc].imagePath
     } 
 
-
       return (
         <View style={styles.container}>
           
@@ -79,7 +78,7 @@ export default class ResultsScreen extends React.Component {
                 <Image
                   style={{flex:1, resizeMode: 'contain', margin: 10}} 
                   source={reccomendedImage}/>
-             
+                  
           </View>
 
           <TouchableHighlight 
@@ -121,7 +120,6 @@ const styles = StyleSheet.create({
   recomendationContainer: {
     flex:1,
     alignItems: 'center',
-    
     backgroundColor: 'white',
     margin: 10,
     borderRadius: 12,
