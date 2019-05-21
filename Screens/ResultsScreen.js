@@ -71,7 +71,7 @@ export default class ResultsScreen extends React.Component {
 
           <View style={styles.tipContainer}>
             <Text style={styles.tipText}>
-               {randomTips[this.randomIntFromInterval(0,randomTips.length-1)]}
+               Tip: {randomTips[this.randomIntFromInterval(0,randomTips.length-1)]}
             </Text>
           </View>
 
