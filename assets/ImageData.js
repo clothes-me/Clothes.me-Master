@@ -273,7 +273,7 @@ export let clothingIcons = {
                                  reccomendation: "yellow_tennis_shoes",
                                  imagePath: require('../assets/Clothing_Icons/yellow_tennis_shoes.png'),
                                  score: 4,
-                              },
+                                },
                                 {
                                    reccomendation: "pink_tennis_shoes",
                                    imagePath: require('../assets/Clothing_Icons/pink_tennis_shoes.png'),
